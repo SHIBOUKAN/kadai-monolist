@@ -17,6 +17,7 @@
 
               
 <%= render 'ownerships/want_button', item: @item %>
+<%= render 'ownerships/have_button', item: @item %>
 
             
 <% end %>
@@ -52,6 +53,11 @@
           Haveしたユーザ
         </div>
         <div class="panel-body">
+          
+          <% @have_users.each do |user| %>
+          <%= link_to user.name, user_path(user) %>
+          <% end %>
+          
         </div>
       </div>
     </div>

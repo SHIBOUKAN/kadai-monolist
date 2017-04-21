@@ -3,10 +3,18 @@
     <div class="text-center">
       
 <%= form_tag(new_item_path, method: :get, class: 'form-inline') do %>
+<% total = session[:total] %>
 
+  <%if total%>
+    <font size="6"><p>あなたのボーナスは<%= total %>円です。</p>
+    <p>ボーナスで買えるものを下のフォームに記入しましょう！！</p></font>
+    
+  <%end%>
+  
         <div class="form-group">
           
 <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 40 %>
+<%= number_field_tag :price,@price,class:"form-control input-lg",placeholder:"ボーナスを入力",size:40%>
 
         </div>
         

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <div class="panel panel-default">
+      
+       <div class="form-group">
+         <h1>ボーナスを計算しよう！</h1>
+        <%= form_tag(new_incomeform_path, method: "get") do %>
+        <%= number_field_tag :kihon, @kihon, class: "form-control input-lg",placeholder:"基本給を入力",size:40%>
+        <%= text_field_tag :kinmu,@kinmu,class: "form-control input-lg",placeholder:"勤務年数を入力",size:40%>
+        <%= submit_tag '入力完了！', class: 'btn btn-success btn-lg' %>
+        <% end %>
+        
+        <% if @total %>
+        <%= @total %>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>

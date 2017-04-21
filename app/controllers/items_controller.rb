@@ -3,11 +3,13 @@ class ItemsController < ApplicationController
 
   def new
     @items = []
+    @price = params[:price]
 
     @keyword = params[:keyword]
     if @keyword
       results = RakutenWebService::Ichiba::Item.search({
         keyword: @keyword,
+        maxPrice: @price,
         imageFlag: 1,
         hits: 20,
       })

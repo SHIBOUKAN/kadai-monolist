@@ -19,14 +19,19 @@
                 <p class="item-title">
 <%= link_to item.name, item %>
 </p>
+
               
 <% else %>
 
                 <p class="item-title">
 <%= item.name %>
+
+
 </p>
               
 <% end %>
+
+<p><%= item.item_price %>円</p>
 
               <div class="buttons text-center">
                 
@@ -35,6 +40,7 @@
                   
 <%= render 'ownerships/want_button', item: item %>
 <%= render 'ownerships/have_button', item: item %>
+
 
                 
 <% end %>

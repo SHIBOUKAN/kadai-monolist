@@ -5,7 +5,7 @@ class IncomeformController < ApplicationController
   kinmu = params[:kinmu]
   total = nil
     if kihon.present? && kinmu.present?
-      if  kinmu.to_i<1
+      if  kinmu.to_f<0.5
         total=kihon.to_i*0.75*2.9*kinmu.to_f*2
         
       else

@@ -25,13 +25,14 @@ class ItemsController < ApplicationController
     code = result.code
     name = result['itemName']
     url = result.url
+    item_price = result['itemPrice']
     image_url = result['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '')
-    @item_price = result['itemPrice']
     return {
       code: code,
       name: name,
       url: url,
       image_url: image_url,
+      item_price: item_price,
     }
   end
 

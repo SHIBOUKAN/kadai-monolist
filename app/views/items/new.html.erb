@@ -7,8 +7,8 @@
 
   <%if total%>
     <font size="6"><p>あなたのボーナスは<%= total %>円です。</p>
-    <p>ボーナスで買えるものを下のフォームに記入しましょう！！</p></font>
-    
+    <p>ボーナスで買いたい物を下のフォームに記入しましょう！！</p></font>
+    <%@price=total.to_i%>
   <%end%>
   
   <% session[:total] = nil %>

@@ -6,9 +6,11 @@
          <h1>ボーナスを計算しよう！</h1>
          <p>この計算結果は通信産業労働組合 大阪支部が一般公開している</p>
          <p>NTT西日本の賞与計算式に基づいています。</p>
+        <% @ratio=100 %>
         <%= form_tag(new_incomeform_path, method: "get") do %>
         <%= number_field_tag :kihon, @kihon, class: "form-control input-lg",placeholder:"基本給を入力",size:40%>
         <%= text_field_tag :kinmu,@kinmu,class: "form-control input-lg",placeholder:"勤務年数を入力",size:40%>
+        <%= number_field_tag :ratio,@ratio,class: "form-control input-lg",placeholder:"パーセンテージを入力",size:40%>
         <%= submit_tag '入力完了！', class: 'btn btn-success btn-lg' %>
         <% end %>
         
